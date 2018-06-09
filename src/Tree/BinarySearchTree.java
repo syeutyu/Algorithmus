@@ -69,6 +69,15 @@ public class BinarySearchTree {
         }
     }
 
+    static void preOrder(Node node){
+        System.out.print(node.val+"\t");
+        if(node.left != null){
+            preOrder(node.left);
+        }
+        if(node.right != null){
+            preOrder(node.right);
+        }
+    }
 
     public static void main(String[] args) {
         Node n1 = new Node(10);
@@ -76,5 +85,6 @@ public class BinarySearchTree {
         add_Node(n1,new Node(13));
         search(n1, 7);
         search(n1,12);
+        preOrder(n1);
     }
 }
