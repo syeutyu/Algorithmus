@@ -41,6 +41,19 @@ class Node {
 }
 
 public class BinarySearchTree {
+    static boolean checkBST(Node root) {
+        return check(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    static boolean check(Node node, int min, int max) {
+        if (node == null) {
+            return true;
+        }
+        if (node.val <= min || node.val >= max) {
+            return false;
+        }
+        return (check(node.left, min, node.val) && check(node.right, node.val, max));
+    }
 
     static void add_Node(Node node, Node target) { // 부모노드와 자식 노드를 매개변수로 받는다
         if (target.val < node.val) {  // 넣을 Node 값이 부모노드 보다 작다면 left에 넣는다
@@ -178,7 +191,7 @@ public class BinarySearchTree {
             if (n1.left != null) {
                 nodes.offer(n1.left);
             }
-            if(n1.right != null){
+            if (n1.right != null) {
                 nodes.offer(n1.right);
             }
         }
@@ -193,12 +206,12 @@ public class BinarySearchTree {
         add_Node(n1, new Node(4));
 
         add_Node(n1, new Node(5));
-        add_Node(n1, new Node(14));
+        add_Node(n1, new Node(1));
         add_Node(n1, new Node(11));
         add_Node(n1, new Node(16));
 
-        delete(n1, 8);
         postOrder(n1);
+        System.out.println(checkBST(n1));
 //        System.out.println(search(n1, 7));
 //        System.out.println(search(n1, 12));
     }

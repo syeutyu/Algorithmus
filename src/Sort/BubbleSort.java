@@ -15,8 +15,8 @@ public class BubbleSort {
             arr[i] = scanner.nextInt();
         }
 
-        for (int i = 1; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - i; j++) {
+        for (int i = 1; i < arr.length; i++) { // 1로 설정한 이유 반복수 만큼 반복할 인덱스를 줄이기 위해서
+            for (int j = 0; j < arr.length - i; j++) {  // 처음 진행할때 index.length 의 1보다 작은 반복을 진행하기위해서
                 if (arr[j + 1] < arr[j]) {
                     int temp = arr[j + 1];
                     arr[j + 1] = arr[j];
