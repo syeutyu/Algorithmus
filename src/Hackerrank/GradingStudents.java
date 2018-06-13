@@ -9,7 +9,7 @@ public class GradingStudents {
          */
         for (int i = 0; i < grades.length / 2; i++) { // 배열의 중앙값을 제외하고 한번만 하면되기에 /2
             int temp = grades[i];
-            grades[i] = grades[grades.length - 1 - i];
+            grades[i] = grades[grades.length - 1 - i]; //마지막 인덱스에서 -i만큼 계속 움직여야 하기에
             grades[grades.length - 1 - i] = temp;
         }
         return grades;

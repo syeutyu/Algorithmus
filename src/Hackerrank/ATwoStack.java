@@ -28,7 +28,7 @@ class MyQueue <T>{
 }
 
 
-public class ATwoStack {
+public class ATwoStack { // 두개의 스택으로 큐를 만드는거 기본적인 구조는 enqueue할때는 stack1에만 dequeue, peek할때는 stack2이 비어있을때만 넣고 아니면 그냥 출력
 
     public static void main(String[] args){
         MyQueue<Integer> queue = new MyQueue<>();

@@ -3,8 +3,8 @@ package Leetcode;
 public class AddBinary {
     public static String addBinary(String a, String b) {
         StringBuilder sb = new StringBuilder();
-        int i = a.length() - 1, j = b.length() -1, carry = 0;
-        while (i >= 0 || j >= 0) {
+        int i = a.length() - 1, j = b.length() -1, carry = 0; // charat에서 index에 접근하기위해서 -1해줌
+        while (i >= 0 || j >= 0) { //두개다 0밑으로 즉 두 스트링모두 검사가 끝날때 까지
             int sum = carry;
             if (j >= 0) sum += b.charAt(j--) - '0';
             if (i >= 0) sum += a.charAt(i--) - '0';
@@ -16,5 +16,5 @@ public class AddBinary {
     }
     public static void main(String[] args){
         System.out.println(addBinary("11","1"));
-    }
+    } // 이진수를 더하기위한 코드
 }

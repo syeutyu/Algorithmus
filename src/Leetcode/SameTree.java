@@ -18,7 +18,7 @@ class TreeNode {
 
 public class SameTree {
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(TreeNode p, TreeNode q) { // 트리가 같은 트리 인지 확인하는 코드 간단히 BFS를 쓰면 구현 가능 기본적으로 true 리턴과 틀린경우에만 false리턴
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(p);
         queue.add(q);
