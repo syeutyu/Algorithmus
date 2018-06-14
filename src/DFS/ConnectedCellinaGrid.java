@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ConnectedCellinaGrid {
     private static final Scanner scanner = new Scanner(System.in);
-
+    static int count = 0;
     static int maxRegion(int[][] grid) { // 두더지 잡기 같은 자신의 위치에서 위아래 양옆 대각선 까지 1이 존재한다면 그 크기를 찾는 DFS
         int max = 0; // 가장 큰값을 찾기위한 변수선언
         for (int i = 0; i < grid.length; i++) {
@@ -29,6 +29,8 @@ public class ConnectedCellinaGrid {
         sum += count(arr, i - 1, j - 1);
         sum += count(arr, i - 1, j + 1);
         sum += count(arr, i + 1, j - 1);
+        System.out.print(sum +" ");
+        System.out.println();
         return sum;
     }
 
@@ -53,7 +55,6 @@ public class ConnectedCellinaGrid {
         }
 
         int res = maxRegion(grid);
-        System.out.println(res);
         scanner.close();
     }
 }
@@ -65,4 +66,7 @@ public class ConnectedCellinaGrid {
 0 1 1 0
 0 0 1 0
 1 0 0 0
+
+
+
  */
