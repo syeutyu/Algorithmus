@@ -3,13 +3,14 @@ package LinkedList;
 public class RevereList {
 
     static void reverse(ListNode n) {
-        ListNode n1 = null;
+        ListNode n1 = null; // null생성
         ListNode n2;
-        while (n != null) {
-            n2 = n.next;
-            n.next = n1;
-            n1 = n;
-            n = n2;
+
+        while (n != null) { // n이 null을 만날때까지
+            n2 = n.next; // next list
+            n.next = n1; // null로 초기화
+            n1 = n; //
+            n = n2; //
         }
         System.out.println(n1);
     }

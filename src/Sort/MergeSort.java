@@ -36,30 +36,29 @@ public class MergeSort {
     }
 
     static void merge(int[] temp1, int[] temp2, int[] arr) {
-        int iA = 0;
-        int iB = 0;
-        int iC = 0;
+        int i = 0;
+        int j = 0;
+        int z = 0;
         // 각각의 Index 관리를 위한 변수 선언
 
-        while (iA < temp1.length) { // temp1의 array.length 만큼 순회
-            if (iB < temp2.length) { // temp2의 길이를 다 순회한다면
-                if ( temp1[iA] < temp2[iB]) {
-                    arr[iC++] = temp1[iA++];
+        while (i < temp1.length) { // temp1의 array.length 만큼 순회
+            if (j < temp2.length) { // temp2의 길이를 다 순회한다면
+                if ( temp1[i] < temp2[j]) { // 값이 누가 더 크냐
+                    arr[z++] = temp1[i++];
                 } else {
-                    arr[iC++] = temp2[iB++];
+                    arr[z++] = temp2[j++];
                 }
             } else { //temp1의 나머지 길이를 순회
-                while (iA < temp1.length) {
-                    arr[iC++] = temp1[iA++];
+                while (i < temp1.length) {
+                    arr[z++] = temp1[i++];
                 }
             }
         }
 
-        while (iB < temp2.length) { // 만약 temp2의 array 비교중 남을 경우 넣어주기 위한 코드
-            arr[iC++] = temp2[iB++];
+        while (j < temp2.length) { // 만약 temp2의 array 비교 중 남을 경우 넣어주기 위한 코드
+            arr[z++] = temp2[j++];
         }
         System.out.println(Arrays.toString(arr));
-
 
     }
 

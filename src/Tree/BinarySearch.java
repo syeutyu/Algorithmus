@@ -4,23 +4,27 @@ import java.util.Arrays;
 
 public class BinarySearch {
 
-    static void search(int[] arr, int target) {
-        Arrays.sort(arr);
+    static int search(int[] arr, int target) { // 이진 검색을 위한 알고리즘
+        Arrays.sort(arr); // 이진 검색을 위해서는 array가 정렬되어있어야한다
         int left = 0;
         int right = arr.length - 1;
-        int pivot;
+        int pivot = 0;
         while (left <= right) {
-            pivot = arr[(left + right) / 2];
-            if (target < pivot) {
-                right = (left + right) / 2 - 1;
-            } else if (pivot < target) {
-                left = (left + right) / 2 + 1;
+            pivot = (left + right) / 2;
+
+            if (target < arr[pivot]) {
+                right = pivot - 1;
+            } else if (arr[pivot] < target) {
+                left = pivot + 1;
             } else {
-                System.out.println((left + right) / 2);
-                System.out.println(pivot);
                 break;
             }
         }
+        if (right <= left) {
+            pivot = 0;
+        }
+
+        return pivot;
     }
 
     public static void main(String[] args) {

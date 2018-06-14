@@ -24,7 +24,7 @@ public class QuickSort {
 
         System.out.println(Arrays.toString(array));
         if (l < right) sort(array, l, right); // 만약 진행한 처음 주어진 시작 위치보다 right가 크다면 즉 배열이 1개가 아니라면 진행
-        if (r > left) sort(array, left, r); // 위와 마찬가지로 array의 배열이
+        if (r > left) sort(array, left, r); // 위와 마찬가지로 array의 배열이 1개가 아니라면 진행
 
     }
 
